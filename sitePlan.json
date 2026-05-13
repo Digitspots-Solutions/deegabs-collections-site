@@ -1,0 +1,49 @@
+{
+  "businessName": "Deegabs Collections",
+  "industry": "Manufacturing",
+  "tone": "Professional and Trustworthy",
+  "tagline": "Quality Manufacturing Solutions for Nigerian Businesses",
+  "sections": [
+    {
+      "id": "hero",
+      "name": "Hero Section",
+      "copy": "Welcome to Deegabs Collections - Your Trusted Manufacturing Partner in Rivers State. We deliver precision, quality, and reliability in every product we manufacture. Serving businesses across Oyigbo and beyond with excellence.",
+      "imagePrompt": "Modern Nigerian manufacturing facility exterior with clean industrial design, bright daylight, professional workers in safety gear visible through large windows, located in Rivers State Nigeria, vibrant colors, high quality photorealistic image",
+      "layout": "centered"
+    },
+    {
+      "id": "about",
+      "name": "About Us",
+      "copy": "Deegabs Collections is a leading manufacturing company based in Oyigbo, Rivers State. We pride ourselves on delivering top-quality manufactured products that meet the highest standards of excellence. Our state-of-the-art facility and experienced team ensure that every project we undertake is completed with precision and care. We understand the unique needs of Nigerian businesses and are committed to providing manufacturing solutions that drive growth and success. From concept to completion, we work closely with our clients to deliver results that exceed expectations.",
+      "imagePrompt": "Professional Nigerian manufacturing team working together in a clean, well-lit production facility, diverse workers collaborating, modern equipment in background, Rivers State industrial setting, warm professional atmosphere, photorealistic",
+      "layout": "split"
+    },
+    {
+      "id": "services",
+      "name": "Our Services",
+      "copy": "At Deegabs Collections, we offer comprehensive manufacturing services tailored to meet your business needs:\n\n• Custom Manufacturing Solutions - We work with you to create products that match your exact specifications and quality standards.\n\n• Quality Control & Assurance - Every product undergoes rigorous testing to ensure it meets our high standards before delivery.\n\n• Production Consultation - Our experienced team provides expert guidance on materials, processes, and cost-effective manufacturing strategies.\n\n• Timely Delivery - We understand the importance of deadlines and ensure your orders are completed and delivered on schedule.\n\n• Bulk Production - Whether you need small batches or large-scale production runs, we have the capacity to meet your demands.\n\nWe serve clients across Rivers State and Nigeria, providing reliable manufacturing services that help businesses grow.",
+      "imagePrompt": "Wide shot of organized Nigerian manufacturing production line, various stages of production visible, quality control station, packaged finished products, professional lighting, clean industrial environment, Rivers State facility, photorealistic detail",
+      "layout": "grid"
+    },
+    {
+      "id": "why-choose-us",
+      "name": "Why Choose Deegabs Collections",
+      "copy": "• Local Expertise - Based in Oyigbo, we understand the Nigerian market and the specific needs of local businesses.\n\n• Quality Guarantee - We never compromise on quality. Every product meets strict quality standards.\n\n• Experienced Team - Our skilled professionals bring years of manufacturing experience to every project.\n\n• Competitive Pricing - We offer excellent value without sacrificing quality or service.\n\n• Customer-Focused - Your satisfaction is our priority. We work closely with you throughout the entire process.\n\n• Reliable Service - Count on us for consistent, dependable manufacturing solutions that keep your business moving forward.",
+      "imagePrompt": "Close-up of Nigerian worker's hands carefully inspecting manufactured product quality, professional manufacturing environment, attention to detail, bright clean workspace, quality assurance theme, photorealistic clarity",
+      "layout": "cards"
+    },
+    {
+      "id": "contact",
+      "name": "Contact Us",
+      "copy": "Ready to discuss your manufacturing needs? Get in touch with Deegabs Collections today.\n\nVisit us at our facility in Oyigbo or reach out via phone or WhatsApp. We're here to answer your questions and provide the manufacturing solutions your business needs.\n\nNo. 1 Bonnie Close, Iriebe Oyigbo, Rivers State\n\nLet's work together to bring your manufacturing projects to life with quality and precision you can trust.",
+      "imagePrompt": "Professional Nigerian business contact scene, modern office reception area with Rivers State manufacturing facility visible through windows, welcoming atmosphere, bright natural lighting, professional and approachable setting, photorealistic",
+      "layout": "centered"
+    }
+  ],
+  "contact": {
+    "phone": "08038552919",
+    "email": "info@deegabscollections.com",
+    "address": "No. 1 Bonnie Close, Iriebe Oyigbo, Rivers State",
+    "whatsapp": "https://wa.me/2348038552919"
+  }
+}
