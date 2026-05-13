@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deegabs Collections - Quality Manufacturing Solutions for Nigerian Businesses</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700;800&family=Outfit:wght@300;400;500&display=swap">
+    <style>
+        :root {
+            --color-primary: #0c1116;
+            --color-accent: #f34129;
+            --color-bg: #F2EDE6;
+            --color-text: #0D1117;
+            --color-surface: #17222e;
+            --color-secondary-accent: #88a8b1;
+            --font-display: 'Exo 2', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --border-radius: 0px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--color-text);
+            background: var(--color-bg);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(12, 17, 22, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1.25rem 5%;
+            box-shadow: 4px 4px 0 rgba(243, 65, 41, 0.3);
+        }
+
+        nav .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav .logo span {
+            color: var(--color-accent);
+        }
+
+        nav .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        nav .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+        }
+
+        nav .nav-links a:hover {
+            color: var(--color-accent);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .mobile-menu-btn span {
+            width: 25px;
+            height: 3px;
+            background: #fff;
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 70px;
+            right: -100%;
+            width: 300px;
+            height: calc(100vh - 70px);
+            background: var(--color-surface);
+            box-shadow: -4px 4px 0 rgba(243, 65, 41, 0.3);
+            transition: right 0.3s ease;
+            z-index: 999;
+            padding: 2rem;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+        }
+
+        .mobile-menu ul li {
+            margin-bottom: 1.5rem;
+        }
+
+        .mobile-menu ul a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+            display: block;
+            padding: 0.5rem 0;
+        }
+
+        .mobile-menu ul a:hover {
+            color: var(--color-accent);
+        }
+
+        section {
+            animation: fadeUp 0.6s ease forwards;
+        }
+
+        section:nth-child(1) { animation-delay: 0s; }
+        section:nth-child(2) { animation-delay: 0.1s; }
+        section:nth-child(3) { animation-delay: 0.2s; }
+        section:nth-child(4) { animation-delay: 0.3s; }
+        section:nth-child(5) { animation-delay: 0.4s; }
+        section:nth-child(6) { animation-delay: 0.5s; }
+
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.55);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 900px;
+            padding: 0 5%;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero .tagline {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--color-accent);
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--color-accent);
+            color: #fff;
+            padding: 1rem 3rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-button:hover {
+            background: #d63621;
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        .about {
+            padding: 80px 5%;
+            background: var(--color-bg);
+        }
+
+        .about-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            box-shadow: 8px 8px 0 rgba(243, 65, 41, 0.3);
+        }
+
+        .about-content h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-primary);
+            text-transform: uppercase;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .services {
+            padding: 80px 5%;
+            background: var(--color-surface);
+            color: #fff;
+        }
+
+        .services-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .services h2 {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            text-transform: uppercase;
+            color: #fff;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--color-primary);
+            padding: 2rem;
+            box-shadow: 4px 4px 0 rgba(243, 65, 41, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--color-accent);
+            text-transform: uppercase;
+        }
+
+        .service-card p {
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .why-choose {
+            padding: 80px 5%;
+            background: var(--color-bg);
+        }
+
+        .why-choose-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .why-choose h2 {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--color-primary);
+            text-transform: uppercase;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .why-card {
+            background: #fff;
+            padding: 2rem;
+            box-shadow: 4px 4px 0 rgba(243, 65, 41, 0.3);
+        }
+
+        .why-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--color-accent);
+            text-transform: uppercase;
+        }
+
+        .why-card p {
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .contact {
+            padding: 80px 5%;
+            background: var(--color-surface);
+            color: #fff;
+        }
+
+        .contact-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+        }
+
+        .contact p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .contact-details {
+            margin: 3rem 0;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-item a {
+            color: var(--color-accent);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: #fff;
+        }
+
+        .whatsapp-button {
+            display: inline-block;
+            background: #25D366;
+            color: #fff;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 2rem;
+            box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-button:hover {
+            background: #1fb855;
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: #fff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            text-decoration: none;
+            box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3);
+            z-index: 999;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            background: #1fb855;
+            transform: scale(1.1);
+        }
+
+        footer {
+            background: var(--color-primary);
+            color: #fff;
+            text-align: center;
+            padding: 2rem 5%;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .tagline {
+                font-size: 1.1rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .about {
+                padding: 48px 5%;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-image {
+                height: 350px;
+            }
+
+            .about-content h2,
+            .services h2,
+            .why-choose h2,
+            .contact h2 {
+                font-size: 2rem;
+            }
+
+            .services,
+            .why-choose,
+            .contact {
+                padding: 48px 5%;
+            }
+
+            .services-grid,
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav .logo {
+                font-size: 1.2rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .cta-button,
+            .whatsapp-button {
+                padding: 0.8rem 2rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Deegabs <span>Collections</span></div>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#why-choose-us">Why Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#why-choose-us">Why Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <section id="hero" class="hero">
+        <img src="https://images.pexels.com/photos/3089681/pexels-photo-3089681.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Deegabs Collections Manufacturing Facility" class="hero-image">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Deegabs Collections</h1>
+            <p class="tagline">Quality Manufacturing Solutions for Nigerian Businesses</p>
+            <p>Welcome to Deegabs Collections - Your Trusted Manufacturing Partner in Rivers State. We deliver precision, quality, and reliability in every product we manufacture. Serving businesses across Oyigbo and beyond with excellence.</p>
+            <a href="#contact" class="cta-button">Get Started</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="about-container">
+            <img src="https://images.pexels.com/photos/9242814/pexels-photo-9242814.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Deegabs Collections Team" class="about-image">
+            <div class="about-content">
+                <h2>About Us</h2>
+                <p>Deegabs Collections is a leading manufacturing company based in Oyigbo, Rivers State. We pride ourselves on delivering top-quality manufactured products that meet the highest standards of excellence. Our state-of-the-art facility and experienced team ensure that every project we undertake is completed with precision and care. We understand the unique needs of Nigerian businesses and are committed to providing manufacturing solutions that drive growth and success. From concept to completion, we work closely with our clients to deliver results that exceed expectations.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="services-container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Custom Manufacturing Solutions</h3>
+                    <p>We work with you to create products that match your exact specifications and quality standards.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Quality Control & Assurance</h3>
+                    <p>Every product undergoes rigorous testing to ensure it meets our high standards before delivery.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Production Consultation</h3>
+                    <p>Our experienced team provides expert guidance on materials, processes, and cost-effective manufacturing strategies.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Timely Delivery</h3>
+                    <p>We understand the importance of deadlines and ensure your orders are completed and delivered on schedule.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Bulk Production</h3>
+                    <p>Whether you need small batches or large-scale production runs, we have the capacity to meet your demands.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Nigeria-Wide Service</h3>
+                    <p>We serve clients across Rivers State and Nigeria, providing reliable manufacturing services that help businesses grow.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-choose-us" class="why-choose">
+        <div class="why-choose-container">
+            <h2>Why Choose Deegabs Collections</h2>
+            <div class="why-grid">
+                <div class="why-card">
+                    <h3>Local Expertise</h3>
+                    <p>Based in Oyigbo, we understand the Nigerian market and the specific needs of local businesses.</p>
+                </div>
+                <div class="why-card">
+                    <h3>Quality Guarantee</h3>
+                    <p>We never compromise on quality. Every product meets strict quality standards.</p>
+                </div>
+                <div class="why-card">
+                    <h3>Experienced Team</h3>
+                    <p>Our skilled professionals bring years of manufacturing experience to every project.</p>
+                </div>
+                <div class="why-card">
+                    <h3>Competitive Pricing</h3>
+                    <p>We offer excellent value without sacrificing quality or service.</p>
+                </div>
+                <div class="why-card">
+                    <h3>Customer-Focused</h3>
+                    <p>Your satisfaction is our priority. We work closely with you throughout the entire process.</p>
+                </div>
+                <div class="why-card">
+                    <h3>Reliable Service</h3>
+                    <p>Count on us for consistent, dependable manufacturing solutions that keep your business moving forward.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="contact-container">
+            <h2>Contact Us</h2>
+            <p>Ready to discuss your manufacturing needs? Get in touch with Deegabs Collections today.</p>
+            <p>Visit us at our facility in Oyigbo or reach out via phone or WhatsApp. We're here to answer your questions and provide the manufacturing solutions your business needs.</p>
+            <div class="contact-details">
+                <div class="contact-item">
+                    <strong>Address:</strong> <span>No. 1 Bonnie Close, Iriebe Oyigbo, Rivers State</span>
+                </div>
+                <div class="contact-item">
+                    <strong>Phone:</strong> <a href="tel:+2348038552919">08038552919</a>
+                </div>
+                <div class="contact-item">
+                    <strong>Email:</strong> <a href="mailto:info@deegabscollections.com">info@deegabscollections.com</a>
+                </div>
+            </div>
+            <p>Let's work together to bring your manufacturing projects to life with quality and precision you can trust.</p>
+            <a href="https://wa.me/2348038552919" class="whatsapp-button" target="_blank">Chat on WhatsApp</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Deegabs Collections. All rights reserved.</p>
+    </footer>
+
+    <a href="https://wa.me/2348038552919" class="whatsapp-float" target="_blank">
+        <span>💬</span>
+    </a>
+
+    <script>
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenuBtn.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+            });
+
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuBtn.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                });
+            });
+        }
+    </script>
+</body>
+</html>
